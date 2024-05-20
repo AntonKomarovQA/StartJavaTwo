@@ -48,6 +48,6 @@ public class Student {
     //метод который воводит всю информацию о студенте не используя переменные класса на прямую
     public void showInfo(){
         //получаем информацию о курсе
-        System.out.println("Студент "+name+" Обучается на курсе "+ course+" и имеет оценку "+ grade);
+        System.out.println("Студент "+getName()+" Обучается на курсе "+ getCourse()+" и имеет оценку "+ getGrade());
     }
 }

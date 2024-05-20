@@ -9,10 +9,7 @@ public class Pet extends Animal {
     public Pet(String name){
         this.name = name;
     }
-    /*public Pet(int tail,int paw ){
-        this.tail = tail;
-        this.paw = paw;
-    }*/
+
     public Pet() {
         System.out.println("I am pet");
         setEyes(2);
