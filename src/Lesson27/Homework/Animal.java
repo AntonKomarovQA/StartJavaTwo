@@ -6,18 +6,11 @@ abstract  class Animal {
     public Animal (String name){
          this.name = name;
      }
+    //Abstraktn metod eat
+    abstract void  eat();
 
     //Abstraktn metod eat
-    void  eat(){
-        System.out.println();
-    }
-
-
-
-    //Abstraktn metod eat
-    void  sleep(){
-        System.out.println();
-    }
+    abstract void  sleep();
 
 }
 
@@ -25,6 +18,7 @@ abstract  class Animal {
      // Конструктор имеет параметр значение которого назначается переменными name
      public Fish(String name) {
          super(name);
+         this.name = name;
      }
      // перезаписанный метод sleep который выводит другую запись
      @Override
@@ -32,21 +26,17 @@ abstract  class Animal {
          System.out.println("Vsegda interesno nabludat kak spyat ribi");
      }
      // абстрактный метод свим
-     void swim(){
-         System.out.println("Plavat");
-     }
+     abstract void swim();
  }
 
 abstract  class Bird extends Animal implements Speakble{
     // Конструктор имеет параметр значение которого назначается переменными name
-
     public Bird(String name) {
         super(name);
+        this.name = name;
     }
     // абстрактный метод flay
-    void fly(){
-        System.out.println("Letat");
-    }
+    abstract void fly();
     public void speak(){
         System.out.println(name + "sings");
     }
@@ -57,9 +47,10 @@ abstract  class Mammal extends Animal implements Speakble{
     // Конструктор имеет параметр значение которого назначается переменными name
     public Mammal(String name) {
         super(name);
+        this.name = name;
     }
     // абстрактный метод run
-    void run(){};
+    abstract void run();
 }
 
 interface Speakble {
@@ -72,6 +63,7 @@ interface Speakble {
 class Mechenosec extends Fish {
     public Mechenosec(String name) {
         super(name);
+        this.name = name;
     }
 
     @Override
@@ -89,6 +81,7 @@ class Pingvin extends Bird{
 
     public Pingvin(String name) {
         super(name);
+        this.name = name;
     }
 
     @Override
@@ -115,6 +108,7 @@ class Lev extends Mammal{
 
     public Lev(String name) {
         super(name);
+        this.name = name;
     }
 
     @Override
