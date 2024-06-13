@@ -1,6 +1,7 @@
 package Lesson33;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class Homework {
     public static void main(String[] args) {
@@ -47,21 +48,18 @@ class Employ{
     }
 }
 //метод printEmploy принимает параметр обьект класса Employ и выводит на экран всю информацию о работнике
-class TestEmp{
-    void printEmploy(Employ emp){
-        System.out.println("Name: "+emp.name+" Dep "+emp.department+" salary "+emp.salary);
+class TestEmp {
+    void printEmploy(Employ emp) {
+        System.out.println("Name: " + emp.name + " Dep " + emp.department + " salary " + emp.salary);
     }
 
     //вывод на экран инф о всех работниках из ArrayList
-    void filtraciyaRabotnikov(ArrayList<Employ> employArrayList, Predicate p ){
-        for (Employ employ : employArrayList){
-            if (p.test(employ)){
-                printEmploy(employ);
-            }
-        }
+    void filtraciyaRabotnikov(ArrayList<Employ> employArrayList, Predicate<Employ> p) {
+//        for (Employ employ : employArrayList) {
+//            if (p.test(employ)) {
+//                printEmploy(employ);
+//            }
+//        }
+        employArrayList.stream().filter(p).forEach(this::printEmploy);
     }
-}
-
-interface Predicate{
-    boolean test(Employ UserEmploy);
 }
